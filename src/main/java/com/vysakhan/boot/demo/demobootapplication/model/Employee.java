@@ -7,12 +7,13 @@ public class Employee {
     private String empCode;
     private double salary;
     
-    Employee(){
+    public Employee(){
         super();
     }
     
-    Employee(String firstName, String lastName, String empCode, double salary){
+   public  Employee(long empId,String firstName, String lastName, String empCode, double salary){
         super();
+        this.empId = empId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.empCode = empCode;
