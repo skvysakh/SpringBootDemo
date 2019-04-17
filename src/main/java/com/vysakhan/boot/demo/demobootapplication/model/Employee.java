@@ -1,10 +1,26 @@
 package com.vysakhan.boot.demo.demobootapplication.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="EMPLOYEE")
 public class Employee {
+    
+    @Id
+    @Column(name="EMPLOYEE_ID")
+    @GeneratedValue
     private long empId;
+     @Column(name="FIRST_NAME")
     private String firstName;
+     @Column(name="LAST_NAME")
     private String lastName;
+     @Column(name="EMPCODE")
     private String empCode;
+     @Column(name="SALARY")
     private double salary;
     
     public Employee(){

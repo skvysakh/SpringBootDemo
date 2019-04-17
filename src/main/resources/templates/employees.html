@@ -33,6 +33,27 @@
         
         <h1>Using Vue</h1>
         
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>EMP.ID</th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME </th>
+            <th>EMP CODE</th>
+            <th>SALARY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="employee in employees" :key="employee.empId">
+              <td>{{ employee.empId }}</td>
+              <td>{{ employee.firstName }}</td>
+              <td>{{ employee.lastName }}</td>
+              <td>{{ employee.empCode }}</td>
+              <td>{{ employee.salary }}</td>
+            </tr>
+          </tbody>
+        </table>
+        
     </div>
 </body>
 <script
@@ -44,7 +65,23 @@
 
 <script type="text/babel">
     var app = new Vue({
-        el: '#contents'
+        el: '#contents',
+        data: {
+             employees: []
+        },
+         mounted() {
+            Vue.http.get("/api/employees").then(result => {
+                this.employees = result.body.origin;
+            }, error => {
+                console.error(error);
+            });
+        },
+    });
+    Vue.component('employee-list',{
+        data: function (){            
+            employees = this.execute('get','/api/employees')
+            return employees
+        }
     });
 </script>
 
