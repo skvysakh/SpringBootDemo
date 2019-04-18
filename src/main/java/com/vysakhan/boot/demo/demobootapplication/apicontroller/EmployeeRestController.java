@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class EmployeeRestController {
     
-    private EmployeeService<Employee> employeeService;
+    private EmployeeService employeeService;
     
     @Autowired
-    public EmployeeRestController(EmployeeService<Employee> empService){
+    public EmployeeRestController(EmployeeService employeeService){
         super();
-        this.employeeService = empService;
+        this.employeeService = employeeService;
     }
     
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
-        return employeeService.getAll();
+        return this.employeeService.getAllEmployees();
     }
     
 }
