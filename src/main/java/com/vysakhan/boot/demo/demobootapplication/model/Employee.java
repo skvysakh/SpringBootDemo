@@ -1,14 +1,20 @@
 package com.vysakhan.boot.demo.demobootapplication.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javassist.SerialVersionUID;
+
 @Entity
 @Table(name="EMPLOYEE")
-public class Employee {
+public class Employee implements Serializable{
+    
+    private static final long SerialVersionUID = 1L;
     
     @Id
     @Column(name="EMPLOYEE_ID")
