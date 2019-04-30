@@ -1,0 +1,12 @@
+
+MongoClientURI uri = new MongoClientURI(
+    "mongodb+srv://vysakhan:<password>@vysakhan-test-cluster-hmp59.gcp.mongodb.net/test?retryWrites=true");
+
+MongoClient mongoClient = new MongoClient(uri);
+MongoDatabase database = mongoClient.getDatabase("test");
+
+MongoClientURI uri = new MongoClientURI(
+    "mongodb+srv://vysakhan:<password>@vysakhan-test-cluster-hmp59.gcp.mongodb.net/test?retryWrites=true");
+
+MongoClient mongoClient = new MongoClient(uri);
+MongoDatabase database = mongoClient.getDatabase("test");
